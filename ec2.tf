@@ -88,7 +88,7 @@ EOT
 resource "aws_instance" "skyage-bastion-server" {
   ami                         = data.aws_ami.amazon_linux_2.id
   instance_type               = "t2.micro"
-  key_name                    = "demo"
+  key_name                    = "skyage-project"
   subnet_id                   = aws_subnet.public_subnet1.id
   associate_public_ip_address = "true"
   vpc_security_group_ids      = [aws_security_group.skyage-bastion-sg.id]
@@ -102,7 +102,7 @@ resource "aws_instance" "skyage-bastion-server" {
 resource "aws_instance" "skyage-app-server-1" {
   ami                         = data.aws_ami.amazon_linux_2.id
   instance_type               = "t2.micro"
-  key_name                    = "demo"
+  key_name                    = "skyage-project"
   subnet_id                   = aws_subnet.private_subnet1.id
   associate_public_ip_address = "false"
   vpc_security_group_ids      = [aws_security_group.skyage-App-SG.id]
@@ -120,7 +120,7 @@ resource "aws_instance" "skyage-app-server-1" {
 resource "aws_instance" "skyage-app-server-2" {
   ami                         = data.aws_ami.amazon_linux_2.id
   instance_type               = "t2.micro"
-  key_name                    = "demo"
+  key_name                    = "skyage-project"
   subnet_id                   = aws_subnet.private_subnet1.id
   associate_public_ip_address = "false"
   vpc_security_group_ids      = [aws_security_group.skyage-App-SG.id]
